@@ -1,0 +1,111 @@
+.container {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.required {
+  color: #cc0202;
+  font-weight: bolder;
+}
+.title {
+  margin-bottom: 0.35em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
+}
+.label {
+  line-height: 1em;
+}
+.description {
+  color: #a7a6a6;
+  font-size: 0.8em;
+  line-height: 1em;
+}
+.error {
+  margin-top: 0.2em;
+  color: #cc0202;
+  line-height: 1em;
+}
+
+.input {
+  width: 100%;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+.input:disabled {
+  width: 100%;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+.variantDefault {
+  border: 1px solid #dddddd;
+  transition: 0.3s;
+  outline: 1px solid transparent;
+}
+.variantFilled {
+  border: 1px solid #dddddd;
+  transition: 0.3s;
+  outline: 1px solid transparent;
+  background: #dddddd;
+}
+.container.variantDefault,
+.container.variantFilled {
+  padding: 0.5em 1em;
+  gap: 0.5em;
+}
+.container.variantUnstyled {
+  padding: 0.5em 0;
+  gap: 0.5em;
+}
+.variantDefault:has(.input:not([disabled]):hover),
+.variantFilled:has(.input:not([disabled]):hover) {
+  border-color: #0087ff;
+}
+.variantDefault:has(.input:not([disabled]):focus),
+.variantFilled:has(.input:not([disabled]):focus) {
+  outline-width: 1px;
+  outline-color: #0087ff;
+}
+.variantDefault:has(.input:disabled),
+.variantFilled:has(.input:disabled),
+.variantUnstyled:has(.input:disabled) {
+  color: #c0c0c0;
+}
+.error:has(.container) {
+  color: #cc0202;
+}
+
+.sizeXS {
+  font-size: 0.7rem;
+}
+.sizeSM {
+  font-size: 0.85rem;
+}
+.sizeMD {
+  font-size: 1rem;
+}
+.sizeLG {
+  font-size: 1.15rem;
+}
+.sizeXL {
+  font-size: 1.3rem;
+}
+
+.radiusXS {
+  border-radius: 0.1rem;
+}
+.radiusSM {
+  border-radius: 0.2rem;
+}
+.radiusMD {
+  border-radius: 0.3rem;
+}
+.radiusLG {
+  border-radius: 0.4rem;
+}
+.radiusXL {
+  border-radius: 0.5rem;
+}

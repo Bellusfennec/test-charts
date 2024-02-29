@@ -2,8 +2,14 @@ import { useEffect, useState } from "react";
 import { characterService } from "../services/characterService";
 import { CharacterChart } from "../components/ui/CharactersChart";
 import { ChartData, ObjectData } from "../types";
+import { Button } from "../components/common/buttons/Button";
+import { DataPickerField } from "../components/common/fileds/DataPickerField";
+import { useForm } from "../hooks/useForm";
 
 export function App() {
+  const { form, handlerChange } = useForm({ initial: { startDate: "", endDate: "" } });
+  console.log(form);
+
   const [characterList, setCharacterList] = useState<any[]>([]);
   const [, setError] = useState();
   const objectList = countByKey({ data: characterList, key: "house" });
@@ -40,6 +46,12 @@ export function App() {
   return (
     <>
       <h1>Информация по вселенной Гарри Поттера</h1>
+      <h2>Поиск по датам:</h2>
+      <div>
+        <DataPickerField onChange={handlerChange} name="startDate" />
+        <DataPickerField onChange={handlerChange} name="endDate" />
+        <Button>Поиск</Button>
+      </div>
       <CharacterChart data={characterChartList} />
     </>
   );

@@ -4,4 +4,7 @@ export interface ObjectData {
 export interface ChartData {
   name: string;
   value: number;
+  color?: string;
 }
+export type Size = "xs" | "sm" | "md" | "lg" | "xl";
+export type FiledVariant = "default" | "filled" | "unstyled";
