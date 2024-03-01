@@ -8,3 +8,4 @@ export interface ChartData {
 }
 export type Size = "xs" | "sm" | "md" | "lg" | "xl";
 export type FiledVariant = "default" | "filled" | "unstyled";
+export type RadioFiledVariant = "filled" | "outline";
